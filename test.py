@@ -11,7 +11,6 @@ while(counter != 0):
         if (number > ans):
             ans = number
     counter = counter -1
-    
 if (odds):
     print 'the largest one: ' + str(ans)
 else:

@@ -3,7 +3,7 @@ low = 0
 high = 100
 ans = abs((low + high) / 2)
 print 'Is your secret number ' + ans + ' ?'
-x = raw_input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicateeele the guess is too low. Enter 'c' to indicate I guessed correctly.")
+x = raw_input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is too low. Enter 'c' to indicate I guessed correctly.")
 while str(x) != 'c':
 	if str(x) == 'h':
 		high = ans
@@ -13,6 +13,6 @@ while str(x) != 'c':
 		print 'Sorry, I did not understand your input.'
 	ans = abs((low + high) / 2)	
 	print 'Is your secret number ' + str(ans) + ' ?'
-	x = raw_input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicate88 the guess is too low. Enter 'c' to indicate I guessed correctly.")
+	x = raw_input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is too low. Enter 'c' to indicate I guessed correctly.")
 print 'Game over. Your secret number was: ' + str(ans)	
 

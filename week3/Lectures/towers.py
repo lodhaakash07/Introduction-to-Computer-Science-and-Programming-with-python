@@ -2,6 +2,7 @@ def printMove(fr, to):
     print('move from ' + str(fr) + ' to ' + str(to))
 
 def Towers(n, fr, to, spare):
+    printMove(fr, to)
     if n == 1:
         printMove(fr, to)
     else:

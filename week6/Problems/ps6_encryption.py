@@ -121,8 +121,12 @@ def applyCoder(text, coder):
     coder: dict with mappings of characters to shifted characters
     returns: text after mapping coder chars to original text
     """
-    ### TODO.
-    return "Not yet implemented." # Remove this comment when you code the function
+    text_coded = ''
+    for index in range(0, len(text)):
+        text_coded += str(coder.get(text[index], text[index]))
+    return text_coded
+        
+        
 
 def applyShift(text, shift):
     """
@@ -135,10 +139,7 @@ def applyShift(text, shift):
     shift: amount to shift the text (0 <= int < 26)
     returns: text after being shifted by specified amount.
     """
-    ### TODO.
-    ### HINT: This is a wrapper function.
-    return "Not yet implemented." # Remove this comment when you code the function
-
+    return applyCoder(text, buildCoder(shift))
 #
 # Problem 2: Decryption
 #

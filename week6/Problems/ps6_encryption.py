@@ -80,7 +80,7 @@ def getStoryString():
     """
     Returns a story in encrypted text.
     """
-    return open("story.txt", "r").read()
+    return open("/home/xala/workarea/Introduction-to-Computer-Science-and-Programming-with-python/week6/Problems/story.txt", "r").read()
 
 
 # (end of helper code)
@@ -150,8 +150,21 @@ def findBestShift(wordList, text):
     text: string
     returns: 0 <= int < 26
     """
-    ### TODO
-    return "Not yet implemented." # Remove this comment when you code the function
+    max_real_words = 0
+    best_shift = 0
+    
+    for i in range(0, 26):
+        coded_text = applyShift(text, i)
+        list_coded_words = coded_text.split(' ')
+        n_valid_words = 0
+        for word in list_coded_words:
+            if isWord(wordList, word):
+                n_valid_words += 1
+        if n_valid_words > max_real_words:
+            max_real_words = n_valid_words
+            best_shift = i
+    return best_shift    
+        
 
 def decryptStory():
     """
@@ -162,8 +175,12 @@ def decryptStory():
 
     returns: string - story in plain text
     """
-    ### TODO.
-    return "Not yet implemented." # Remove this comment when you code the function
+    
+    wordList = loadWords()
+    story = getStoryString()
+    bestShift = findBestShift(wordList, story)
+    return applyShift(story, bestShift)
+    
 
 #
 # Build data structures used for entire session and run encryption

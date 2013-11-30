@@ -216,6 +216,7 @@ c = [8,4]
 d = [9,5]
 
 treeTest = buildDTree([], [a,b,c,d])
+print treeTest.getValue()
 
 def sumValues(lst):
     vals = [e[0] for e in lst]
